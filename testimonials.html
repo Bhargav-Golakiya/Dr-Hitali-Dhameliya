@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials | Dr. Hitali Dhameliya</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --text: #333;
+            --white: #fff;
+            --gray: #f9f9f9;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION BAR (SAME AS CONTACT PAGE) */
+        nav {
+            width: 100%;
+            background: var(--dark);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        .nav-logo {
+            color: var(--white);
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-link {
+            color: var(--white);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            background-color: var(--secondary);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--white);
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background: var(--dark);
+                width: 200px;
+                display: none;
+                padding: 1rem;
+            }
+
+            .nav-menu.open {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .title {
+            font-size: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Testimonials Specific Styles */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: var(--transition);
+            border-top: 4px solid var(--secondary);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .testimonial-content {
+            position: relative;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            color: var(--text);
+            flex-grow: 1;
+        }
+
+        .quote-icon {
+            color: var(--secondary);
+            opacity: 0.3;
+            font-size: 1.5rem;
+        }
+
+        .fa-quote-left {
+            margin-right: 0.5rem;
+        }
+
+        .fa-quote-right {
+            margin-left: 0.5rem;
+        }
+
+        .testimonial-author {
+            border-top: 1px solid #eee;
+            padding-top: 1rem;
+        }
+
+        .testimonial-author h4 {
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+        }
+
+        .testimonial-author p {
+            color: var(--text);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            border-radius: 8px;
+        }
+
+        footer a {
+            color: var(--light);
+            text-decoration: none;
+        }
+
+        @media (max-width: 480px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation (Same as Contact Page) -->
+    <nav>
+        <a href="index.html" class="nav-logo">Dr. Hitali Dhameliya</a>
+        <div class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></div>
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="testimonials.html" class="nav-link active">Testimonials</a></li>
+            <li><a href="publications.html" class="nav-link">Publications</a></li>
+            <li><a href="skills.html" class="nav-link">Skills</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <header>
+            <h1>Testimonials</h1>
+            <p class="title">What colleagues and patients say</p>
+        </header>
+
+        <section id="testimonials">
+            <h2>Professional Endorsements</h2>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p>Dr. Dhameliya demonstrated exceptional leadership in improving our MIPS quality performance scores by 20%. Her workflow optimizations significantly enhanced our clinic's efficiency.</p>
+                        <i class="fas fa-quote-right quote-icon"></i>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Roots Health Administrator</h4>
+                        <p>Healthcare Operations</p>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p>During our work on the Maternal Mortality Review Committee, Dr. Dhameliya showed meticulous attention to detail in data redaction and confidentiality compliance.</p>
+                        <i class="fas fa-quote-right quote-icon"></i>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>UNT Health Science Center Colleague</h4>
+                        <p>Public Health Research</p>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p>As our Medical Officer, Dr. Hitali increased cardiac rehabilitation service utilization by 15% through her patient counseling and quality improvement initiatives.</p>
+                        <i class="fas fa-quote-right quote-icon"></i>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Vraj Heart Care Clinic Staff</h4>
+                        <p>Cardiac Care Team</p>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p>Her strategic management of COVID-19 services led to a 20% reduction in cases in our community. Dr. Dhameliya was instrumental in our pandemic response.</p>
+                        <i class="fas fa-quote-right quote-icon"></i>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>SMIMER Hospital Director</h4>
+                        <p>Surat Municipal Institute</p>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p>Dr. Dhameliya's quality improvement initiatives resulted in a 20% reduction in healthcare-associated infections during her internship with us.</p>
+                        <i class="fas fa-quote-right quote-icon"></i>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Dr. D. Y. Patil Hospital</h4>
+                        <p>Medical Education</p>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p>Her unique combination of clinical expertise and administrative acumen makes Dr. Dhameliya an exceptional healthcare professional who delivers measurable results.</p>
+                        <i class="fas fa-quote-right quote-icon"></i>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Professional Colleague</h4>
+                        <p>Healthcare Management</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Dr. Hitali Dhameliya. All rights reserved.</p>
+            <p><a href="mailto:dhameliyahitali@gmail.com">dhameliyahitali@gmail.com</a> | <a href="tel:+19452399990">+1 (945) 239-9990</a></p>
+        </footer>
+    </main>
+
+    <script>
+        // Toggle menu for mobile (Same as Contact Page)
+        const toggleBtn = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        toggleBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('open');
+        });
+
+        // Highlight current page
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('.nav-link').forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>

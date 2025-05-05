@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Publications | Dr. Hitali Dhameliya</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <style>
+    :root {
+      --primary: #2c3e50;
+      --secondary: #3498db;
+      --accent: #e74c3c;
+      --light: #ecf0f1;
+      --dark: #2c3e50;
+      --text: #333;
+      --white: #fff;
+      --gray: #f9f9f9;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text);
+      background-color: var(--white);
+      line-height: 1.6;
+    }
+
+    /* NAVIGATION BAR */
+    nav {
+      width: 100%;
+      background: var(--dark);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .nav-logo {
+      color: var(--white);
+      font-size: 1.3rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+
+    .nav-link {
+      color: var(--white);
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: var(--transition);
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      background-color: var(--secondary);
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      color: var(--white);
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: var(--dark);
+        width: 200px;
+        display: none;
+        padding: 1rem;
+      }
+
+      .nav-menu.open {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: var(--white);
+      padding: 2rem;
+      border-radius: 8px;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .title {
+      font-size: 1.3rem;
+      margin-top: 0.5rem;
+    }
+
+    /* Publications page specific styles */
+    .publications-list {
+      margin-bottom: 3rem;
+    }
+
+    .publication-item {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid #eee;
+      align-items: flex-start;
+    }
+
+    .publication-icon {
+      font-size: 2rem;
+      color: var(--secondary);
+      min-width: 50px;
+      text-align: center;
+      padding-top: 0.5rem;
+    }
+
+    .publication-details {
+      flex: 1;
+    }
+
+    .publication-details h3 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+
+    .publication-meta {
+      color: #777;
+      font-size: 0.9rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--white);
+      padding: 0.7rem 1.5rem;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-top: 1rem;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .btn:hover {
+      background: #c0392b;
+    }
+
+    .btn-small {
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+      margin-top: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .research-interests {
+      background: var(--gray);
+      padding: 2rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+
+    .interests-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .interests-list li {
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .interests-list i {
+      color: var(--secondary);
+    }
+
+    footer {
+      background: var(--dark);
+      color: var(--white);
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      border-radius: 8px;
+    }
+
+    footer a {
+      color: var(--light);
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .publication-item {
+        flex-direction: column;
+      }
+
+      .publication-icon {
+        margin-bottom: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html" class="nav-logo">Dr. Hitali Dhameliya</a>
+    <div class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></div>
+    <ul class="nav-menu" id="nav-menu">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+      <li><a href="publications.html" class="nav-link active">Publications</a></li>
+      <li><a href="skills.html" class="nav-link">Skills</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <header>
+      <h1>Publications</h1>
+      <p class="title">Research Contributions and Academic Works</p>
+    </header>
+
+    <section id="publications">
+      <h2>Research Publications</h2>
+      
+      <div class="publications-list">
+        <div class="publication-item">
+          <div class="publication-icon">
+            <i class="fas fa-file-pdf"></i>
+          </div>
+          <div class="publication-details">
+            <h3>Maternal Mortality Review and Prevention Strategies</h3>
+            <p class="publication-meta">Journal of Community Medicine | 2023</p>
+            <p>Contributed to research on maternal mortality data analysis and prevention strategies as part of the Texas Maternal Mortality and Morbidity Review Committee.</p>
+            <a href="https://www.jcdronline.org/admin/Uploads/Files/66a7162c6ba9e1.33205139.pdf" target="_blank" class="btn btn-small">
+              <i class="fas fa-download"></i> Download PDF
+            </a>
+          </div>
+        </div>
+
+        <div class="publication-item">
+          <div class="publication-icon">
+            <i class="fas fa-file-alt"></i>
+          </div>
+          <div class="publication-details">
+            <h3>Quality Improvement in Cardiac Rehabilitation Utilization</h3>
+            <p class="publication-meta">Cardiac Care Journal | 2021</p>
+            <p>Documented quality improvement initiatives that increased cardiac rehabilitation service utilization from 40% to 55% at Vraj Heart Care Clinic.</p>
+            <a href="#" class="btn btn-small" onclick="alert('Publication link coming soon')">
+              <i class="fas fa-book-open"></i> Read Abstract
+            </a>
+          </div>
+        </div>
+
+        <div class="publication-item">
+          <div class="publication-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <div class="publication-details">
+            <h3>EHR Workflow Optimization for MIPS Performance</h3>
+            <p class="publication-meta">Healthcare Administration Review | 2024</p>
+            <p>Case study on implementing training modules for EHR optimization that resulted in 15% operational efficiency gains and 20% improvement in MIPS scores.</p>
+            <a href="#" class="btn btn-small" onclick="alert('Publication link coming soon')">
+              <i class="fas fa-external-link-alt"></i> View Online
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="research-interests">
+        <h3>Research Interests</h3>
+        <ul class="interests-list">
+          <li><i class="fas fa-check-circle"></i> Maternal health outcomes and mortality prevention</li>
+          <li><i class="fas fa-check-circle"></i> Healthcare quality improvement methodologies</li>
+          <li><i class="fas fa-check-circle"></i> Electronic health record optimization</li>
+          <li><i class="fas fa-check-circle"></i> Cardiac rehabilitation program effectiveness</li>
+          <li><i class="fas fa-check-circle"></i> Healthcare operational efficiency metrics</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2024 Dr. Hitali Dhameliya. All rights reserved.</p>
+      <p><a href="mailto:dhameliyahitali@gmail.com">dhameliyahitali@gmail.com</a> | <a href="tel:+19452399990">+1 (945) 239-9990</a></p>
+    </footer>
+  </main>
+
+  <script>
+    // Toggle menu for mobile
+    const toggleBtn = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    toggleBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+    });
+
+    // Highlight current page
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-link').forEach(link => {
+      if (link.getAttribute('href') === currentPage) {
+        link.classList.add('active');
+      }
+    });
+  </script>
+</body>
+</html>

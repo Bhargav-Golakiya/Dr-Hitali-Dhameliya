@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About | Dr. Hitali Dhameliya</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <style>
+    :root {
+      --primary: #2c3e50;
+      --secondary: #3498db;
+      --accent: #e74c3c;
+      --light: #ecf0f1;
+      --dark: #2c3e50;
+      --text: #333;
+      --white: #fff;
+      --gray: #f9f9f9;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text);
+      background-color: var(--white);
+      line-height: 1.6;
+    }
+
+    /* NAVIGATION BAR */
+    nav {
+      width: 100%;
+      background: var(--dark);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .nav-logo {
+      color: var(--white);
+      font-size: 1.3rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+
+    .nav-link {
+      color: var(--white);
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: var(--transition);
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      background-color: var(--secondary);
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      color: var(--white);
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: var(--dark);
+        width: 200px;
+        display: none;
+        padding: 1rem;
+      }
+
+      .nav-menu.open {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: var(--white);
+      padding: 2rem;
+      border-radius: 8px;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .title {
+      font-size: 1.3rem;
+      margin-top: 0.5rem;
+    }
+
+    /* About page specific styles */
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .about-text {
+      flex: 2;
+      min-width: 300px;
+    }
+
+    .about-image {
+      flex: 1;
+      min-width: 300px;
+      text-align: center;
+    }
+
+    .about-image img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .education-item {
+      background: var(--gray);
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      border-left: 4px solid var(--secondary);
+    }
+
+    .education-item h3 {
+      margin-top: 0;
+      color: var(--primary);
+    }
+
+    ul {
+      margin: 1rem 0;
+      padding-left: 2rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    footer {
+      background: var(--dark);
+      color: var(--white);
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      border-radius: 8px;
+    }
+
+    footer a {
+      color: var(--light);
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .about-content {
+        flex-direction: column;
+      }
+      
+      .about-image {
+        order: -1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html" class="nav-logo">Dr. Hitali Dhameliya</a>
+    <div class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></div>
+    <ul class="nav-menu" id="nav-menu">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="about.html" class="nav-link active">About</a></li>
+      <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+      <li><a href="publications.html" class="nav-link">Publications</a></li>
+      <li><a href="skills.html" class="nav-link">Skills</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <header>
+      <h1>About Dr. Hitali Dhameliya</h1>
+      <p class="title">MBBS, MHA, LSSYB, CPHQ</p>
+    </header>
+
+    <section id="about">
+      <div class="about-content">
+        <div class="about-text">
+          <h2>My Journey</h2>
+          <p>As I continue to navigate my professional journey, I am committed to making a meaningful impact in the healthcare industry by combining clinical insights with strategic management. I am excited about the opportunities ahead and eager to apply my skills to create positive change in healthcare delivery.</p>
+          
+          <h3>Education</h3>
+          <div class="education-item">
+            <h3>University of North Texas Health Science Center School of Public Health</h3>
+            <p>Master's degree, Health/Health Care Administration/Management · (August 2022 - July 2024)</p>
+          </div>
+          <div class="education-item">
+            <h3>DY Patil University</h3>
+            <p>Bachelor of Medicine, Bachelor of Surgery - MBBS, Medicine · (August 2013 - February 2019)</p>
+          </div>
+
+          <h3>Professional Philosophy</h3>
+          <p>My approach to healthcare combines evidence-based medicine with compassionate patient care and efficient system management. I believe in:</p>
+          <ul>
+            <li>Patient-centered care models</li>
+            <li>Data-driven decision making</li>
+            <li>Continuous quality improvement</li>
+            <li>Interdisciplinary collaboration</li>
+            <li>Innovative healthcare solutions</li>
+          </ul>
+        </div>
+        <div class="about-image">
+          <img src="Drhitaliabout.jpg" alt="Dr. Hitali Dhameliya, MBBS, MHA, healthcare professional">
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2024 Dr. Hitali Dhameliya. All rights reserved.</p>
+      <p><a href="mailto:dhameliyahitali@gmail.com">dhameliyahitali@gmail.com</a> | <a href="tel:+19452399990">+1 (945) 239-9990</a></p>
+    </footer>
+  </main>
+
+  <script>
+    // Toggle menu for mobile
+    const toggleBtn = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    toggleBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+    });
+
+    // Highlight current page
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-link').forEach(link => {
+      if (link.getAttribute('href') === currentPage) {
+        link.classList.add('active');
+      }
+    });
+  </script>
+</body>
+</html>
